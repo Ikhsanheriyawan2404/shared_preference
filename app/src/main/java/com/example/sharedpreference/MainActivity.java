@@ -2,6 +2,7 @@ package com.example.sharedpreference;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -40,6 +41,10 @@ public class MainActivity extends AppCompatActivity {
                     setData.putString("USERNAME", username);
                     setData.putString("NAME", user[2]);
                     setData.apply();
+                    Toast.makeText(getApplicationContext(),
+                            "Login Success", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(getApplicationContext(), Dashboard.class));
+                    finish();
                 } else {
                     Toast.makeText(getApplicationContext(),
                             "Login Failed", Toast.LENGTH_SHORT).show();
